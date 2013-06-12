@@ -1,0 +1,74 @@
+﻿<section>
+    <h2 data-bind="html: displayName"></h2>
+<!--    <div class="row-fluid">
+        <ul class="thumbnails" data-bind="foreach: accounts">
+            <li>
+
+            </li>
+        </ul>
+    </div>-->
+
+<!--<h2>Index</h2>-->
+
+<p>
+    <a href="#" data-bind="attr: {href:'#/AccountEdit/ADDNEW'}">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            PhoneNumber
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Name
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody data-bind="foreach: accounts">
+    <tr>
+        <td>
+            <span data-bind = "text: Id"></span>
+        </td>
+        <td>
+            <span data-bind = "text: Name"></span>
+        </td>
+        <td>
+            <span data-bind = "text: City"></span>
+        </td>
+        <td>
+            <span data-bind = "text: Address"></span>
+        </td>
+        <td>
+            <span data-bind = "text: PhoneNumber"></span>
+        </td>
+        <td>
+            <span data-bind = "text: Type"></span>
+        </td>
+        <td>
+            <span data-bind = "text: ParentAccountId"></span>
+        </td>
+        <td>
+            <a  data-toggle="modal" data-bind="attr:{ href: '#/AccountEdit/'+ $data.Id()}">Edit</a> |
+            <a href="/AccountMVC/Details/1">Details</a> |
+            <input type="button" value="delete" data-bind="click: function () { $parent.delete($data) }"/>
+        </td>
+    </tr>
+        </tbody>
+</table>
+</section>

@@ -1,0 +1,56 @@
+﻿
+<p>
+<!--    <a href="#" data-bind="click:addNew">Create New</a>-->
+</p>
+<a href="#" data-bind="click: addInvoiceLine">Add New</a> |
+<table class="table table-striped">
+    <tr  class="controls-row">
+        <th>
+            Description
+        </th>
+        <th>
+            ProductId
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            InvoiceId
+        </th>
+        <th>
+            LineTotal
+        </th>
+        <th></th>
+    </tr>
+    <tbody data-bind="foreach: invoiceLines">
+    <tr class="controls-row">
+        <td>
+            <input  class="input-small" type="text" data-bind="value: Description"/>
+        </td>
+        <td>
+            <select   data-val="true" data-bind="options: $parent.products(), optionsCaption: 'Select a Product', optionsText: 'Name', optionsValue: 'Id', value: ProductId"
+                required id="ProductId" name="ProductId">
+            </select>
+        </td>
+        <td>
+            <input class="input-small" type="text"  data-bind="value: Quantity"/>
+        </td>
+        <td>
+            <input  class="input-small" type="text"  data-bind="value: Price"/>
+        </td>
+        <td>
+            <span  class="uneditable-input input-small" data-bind="text: InvoiceId"></span>
+        </td>
+        <td>
+            <span   class="uneditable-input input-small"  data-bind="text:  0"></span>
+        </td>
+        <td>
+            <input type="button" value="Delete" class="btn" data-bind="        click: function(){$parent.deleteInvoiceLine($data);}"/>
+        </td>
+    </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,73 @@
+﻿<div  class="messageBox autoclose" style="max-width: 425px">
+<h2 class="modal-header">Edit Account</h2>
+<form action="/account/Edit/3" method="post" class="form-horizontal" data-bind="submit: save, with: account">
+<div class="modal-body">
+    <input name="__RequestVerificationToken" type="hidden" value="vnzjAsqEuLlyiS7Nu9tvq4q7iz2BaQtzXoK3yIOFrxd53_zOmoTMiiQVM7hRoHmdEOnnJpJ1Wzes67PMy1ZnaW0o2U1iTpbrNFy5xdqGdbo1" />   
+     <fieldset>
+         <div class="control-group">
+            <label class="control-label" for="Account_Name">Name</label>
+            <div class="controls">
+                <input  placeholder="Type name here…" data-bind="value:Name" title="Cannot be Empty"        data-validation-pattern-message="Must start with 'a' and end with 'z'" required data-validation-required-message="You must agree to the terms and conditions" id="Name" name="Name" type="text"  />
+                <p class="help-block"></p>
+            </div>
+        </div>
+
+         <div class="control-group">
+            <label class="control-label" for="Account_Name">City</label>
+            <div class="controls">
+               <input data-bind="value: City" class="text-box single-line" id="Account_City" name="Account.City" type="text" />
+                <p class="help-block"></p>
+            </div>
+        </div>
+
+         <div class="control-group">
+            <label class="control-label" for="Account_Name">Address</label>
+            <div class="controls">
+            <input data-bind="value: Address" class="text-box single-line" id="Account_Address" name="Account.Address" type="text" />
+                <p class="help-block"></p>
+        </div>
+
+         </div>
+
+         <div class="control-group">
+            <label class="control-label" for="Account_Name">Phone Number</label>
+            <div class="controls">
+           <input data-bind="value: PhoneNumber" pattern="[0-9 -]{6,15}" class="text-box single-line" id="Account_PhoneNumber" name="Account.PhoneNumber" type="tel"  />
+                <p class="help-block"></p>
+        </div>
+
+        </div>
+
+         <div class="control-group">
+            <label class="control-label" for="Account_Name">Type</label>
+            <div class="controls">
+            <input data-bind="value: Type" class="text-box single-line" id="Account_Type" name="Account.Type" type="text" />
+                <p class="help-block"></p>
+        </div>
+
+        </div>
+
+         <div class="control-group">
+            <label class="control-label" for="Account_Name">Parent Account</label>
+            <div class="controls">
+                <select data-bind="options: $parent.accounts(), optionsCaption: 'Select an account', optionsText: 'Name', optionsValue: 'Id', value: ParentAccountId" data-val="true" data-val-number="The field Parent Account must be a number." id="Account_ParentAccountId" name="Account.ParentAccountId">
+                </select>
+                <p class="help-block"></p>
+            </div>
+        </div>
+
+        <input data-val="true"  id="Id" name="Id" data-bind="value:Id" type="hidden" />
+
+    </fieldset>
+    </div>
+<div class="modal-footer" data-bind="with:$parent">
+        <div class="btn-group">
+            <input class="btn" type="submit" value="Save"  />
+            <input  class="btn" type="button" value="Close" data-bind="click: close" />
+            <a  class="btn"  data-bind="attr: {href:'#/AccountList'}" >Back to List</a>
+        </div>
+</div>
+
+</form>
+
+</div>

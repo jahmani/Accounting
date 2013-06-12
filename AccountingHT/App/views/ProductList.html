@@ -1,0 +1,64 @@
+﻿<div class="container">
+
+    <h4>Product <small>Listing</small></h4>
+    <table class="table table-striped">
+        <caption></caption>
+        <thead>
+            <tr>
+                <th>Cost
+                </th>
+                <th>Name
+                </th>
+                <th>Picture
+                </th>
+                <th>Picture Id
+                </th>
+                <th>Price
+                </th>
+                <th>Purchased Price
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:products">
+        <tr>
+            <td>
+                <span data-bind="text: Cost"></span>
+            </td>
+            <td>
+                <span data-bind="text: Name"></span>
+            </td>
+            <td>
+                <span data-bind="text: Picture"></span>
+            </td>
+            <td>
+                <span data-bind="text: PictureId"></span>
+            </td>
+            <td>
+                <span data-bind="text: Price"></span>
+            </td>
+            <td>
+                <span data-bind="text: PurchasedPrice"></span>
+            </td>
+            <td>
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Action
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a  data-bind="attr: {href:'#/ProductEdit/'+$data.Id()}">Edit</a></li>
+                        <li><a data-bind="click: function () { $parent.delete($data) }">Delete</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Details</a></li>
+
+                    </ul>
+                </div>
+
+            </td>
+        </tr>
+</tbody>
+    </table>
+    <p>
+        <a class="btn" href="#/ProductEdit/New" >Create New</a>
+    </p>
+</div>

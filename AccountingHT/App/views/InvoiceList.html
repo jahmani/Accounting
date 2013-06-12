@@ -1,0 +1,55 @@
+﻿
+<p>
+    <a href="#/InvoiceEdit/New">Create New</a>
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            Description
+        </th>
+        <th>
+            CreditAccount
+        </th>
+        <th>
+            DebitAccount
+        </th>
+        <th>
+            Ammount
+        </th>
+        <th>
+            Currency
+        </th>
+        <th>
+            DateTime
+        </th>
+        <th></th>
+    </tr>
+    <tbody data-bind="foreach: invoices">
+    <tr>
+        <td>
+            <span data-bind="text: Description"></span>
+        </td>
+        <td>
+            <span data-bind="text: CreditAccount()? CreditAccount().Name:'null'"></span>
+        </td>
+        <td>
+            <span data-bind="text: DebitAccount() ? DebitAccount().Name : 'null'"></span>
+        </td>
+        <td>
+            <span data-bind="text: Ammount"></span>
+        </td>
+        <td>
+            <span data-bind="text: Currency().Sympol"></span>
+        </td>
+        <td>
+            <span data-bind="datetext: DateTime"></span>
+        </td>
+        <td>
+            <div class="btn-group">
+            <a class="btn" data-bind="attr: {href:'#/InvoiceEdit/'+$data.Id()}">Edit</a>
+            <input class="btn" type="button" value="Delete" data-bind="click: function () { $parent.deleteItem($data)}" /> </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+

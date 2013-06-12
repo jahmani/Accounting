@@ -1,0 +1,66 @@
+﻿<div >
+    <h2 class="modal-header" data-bind="text: displayName"></h2>
+    <form action="/Invoice/Edit/1" method="post" data-bind="submit:save, with: invoice" class="form-horizontal">
+        <div class="modal-body">
+            <div class="control-group">
+                <label class="control-label" for="Description">Description</label>
+                <div class="controls">
+                    <input class="text-box single-line" id="Description" name="Description" type="text" data-bind="value: Description" />
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="CreditAccountId">CreditAccountId</label>
+                <div class="controls">
+                    <select data-val="true" data-bind="options: $parent.accounts(), optionsCaption: 'Select an account', optionsText: 'Name', optionsValue: 'Id', value: CreditAccountId"
+                        required id="CreditAccountId" name="CreditAccountId">
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="DebitAccountId">DebitAccountId</label>
+                <div class="controls">
+                    <select data-val="true" data-bind="options: $parent.accounts, optionsCaption: 'Select Debit account', optionsText: 'Name', optionsValue: 'Id', value: DebitAccountId"
+                        required id="Select1" name="CreditAccountId">
+                    </select>
+                </div>
+            </div>
+
+            <!-- Button Drop Down -->
+            <div class="control-group">
+                <label class="control-label">Ammount</label>
+                <div class="controls controls-row">
+                    <input id="appendedInput" name="buttondropdown" placeholder="Ammount" type="number" data-bind="value: Ammount">
+
+                    <select data-val="true" data-bind="value: CurrencyId" required id="Select2" name="CurrencyId">
+                        <option value="">Select One Item</option>
+                        <option selected="selected" value="1">JOD</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label"  id="DateTimeDiv" for="DateTime">DateTime</label>
+                <div class="controls " data-date-format="dd-mm-yyyy">
+                    <input data-bind="datevalue: DateTime" class="span2" size="16"  data-val="true" id="DateTime" name="DateTime" type="text" />
+                <span class="add-on"><i class="icon-th"></i></span>
+
+                </div>
+            </div>
+            <input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Id" name="Id" type="hidden" value="1" />
+        </div>
+        <div class=" modal-footer" data-bind="with:$parent">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <a class="btn " href="#/InvoiceList">Cancel</a>
+        </div>
+    </form>
+    <div data-bind="compose: { preserveContext: true, view: 'InvoiceLineList.html' }"></div>
+<div  >
+<!--    <div data-bindddddddddddddddd="compose: { model: invoiceLinsVM }"></div>-->
+</div>
+
+</div>
+

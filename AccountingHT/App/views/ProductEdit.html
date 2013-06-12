@@ -1,0 +1,77 @@
+﻿<div class="messageBox autoclose" style="max-width: 500px">
+    <h2 class="modal-header" data-bind="text: displayName"></h2>
+
+    <form action="#" method="post" data-bind="submit:save, with:product"  class="form-horizontal">
+        <div class="modal-body">
+
+            <input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Product_Id" name="Product.Id" type="hidden" />
+
+            <div class="control-group">
+                <label class="control-lable" for="Name">Name</label>
+                <input class="text-box singl-line" id="Name" name="Name" type="text" data-bind="value:Name"
+                    data-val="true" data-val-length="Product Name Must be between 4 &amp; 65"
+                     data-val-length-max="65" data-val-length-min="4" data-val-required="The Name field is required." />
+                <span class="field-validation-valid" data-valmsg-for="Product.Name" data-valmsg-replace="true"></span>
+            </div>
+<!--            //////////////////
+            <div class="editor-label">
+                <label for="Product_Name">Name</label>
+            </div>
+
+                        <div class="control-group">
+                <label class="control-label" for="Description">Description</label>
+                <div class="controls">
+                    <input class="text-box single-line" id="Description" name="Description" type="text" data-bind="value: Description" />
+                </div>
+            </div>
+
+
+
+            <div class="editor-field">
+                <input class="text-box single-line" data-val="true" data-val-length="Product Name Must be between 4 &amp; 65"
+                     data-val-length-max="65" data-val-length-min="4" data-val-required="The Name field is required." id="Product_Name" name="Product.Name" type="text" data-bind="value:Name" />
+                <span class="field-validation-valid" data-valmsg-for="Product.Name" data-valmsg-replace="true"></span>
+            </div>
+            ///////////////-->
+
+            <div class="editor-label">
+                <label for="Product_Price">Price</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="Product_Price" name="Product.Price" type="text" data-bind="value: Price" />
+                <span class="field-validation-valid" data-valmsg-for="Product.Price" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="editor-label">
+                <label for="Product_PurchasedPrice">PurchasedPrice</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" data-val="true" data-val-number="The field PurchasedPrice must be a number." id="Product_PurchasedPrice" name="Product.PurchasedPrice" type="text" data-bind="value: PurchasedPrice" />
+                <span class="field-validation-valid" data-valmsg-for="Product.PurchasedPrice" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="editor-label">
+                <label for="Product_Cost">Cost</label>
+            </div>
+            <div class="editor-field currency">
+                <input class="text-box single-line" data-val="true" data-val-number="The field Cost must be a number." id="Product_Cost" name="Product.Cost" type="text" data-bind="value:Cost" />
+                <span class="field-validation-valid" data-valmsg-for="Product.Cost" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="editor-label">
+                <label for="Product_PictureId">PictureId</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" data-val="true" data-val-number="The field PictureId must be a number." id="Product_PictureId" name="Product.PictureId" type="number" data-bind="value:PictureId" />
+                <span class="field-validation-valid" data-valmsg-for="Product.PictureId" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class=" modal-footer" data-bind="with: $parent">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <a class="btn " href="#" data-bind="click: close">Cancel</a>
+        </div>
+    </form>
+    <div>
+        <a href="/Product">Back to List</a>
+    </div>
+</div>
